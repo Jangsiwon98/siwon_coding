@@ -1,5 +1,7 @@
 package com.boot.jdbc.model.biz;
 
-public interface MovieBiz {
+import com.boot.jdbc.model.dto.MovieDto;
 
+public interface MovieBiz {
+	public MovieDto selectMovie(int movieno);
 }
