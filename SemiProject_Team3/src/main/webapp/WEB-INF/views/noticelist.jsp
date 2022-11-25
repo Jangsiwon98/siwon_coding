@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +43,7 @@
         }
     </style>
     <!-- 공지사항 -->
-    <style tyoe="text/css">
+    <style type="text/css">
         h2{ 
             margin-left: 100px;
             margin-top: 100px;
@@ -83,7 +84,7 @@
 <!--헤더-->
     <header id="main-header">
         <div class="header-title">
-            <a><img width="400" src="src/Logo.png"></a></p>
+            <a><img width="400" src="src/Logo.png"></a>
         </div>
         <nav class="header-menu">
             <ul>
@@ -99,12 +100,12 @@
     <div id="board-list">
         <div class="container">
             <table class="board-table">
-                <thaed>
+                <thead>
                 <tr>
                     <th scope="col" class="th-date">날 짜</th>
                     <th scope="col" class="th-title">제 목</th>
                 </tr>
-                </thaed>
+                </thead>
                 <tbody>
                 <c:choose>
                     <c:when test="${empty list }">
@@ -116,23 +117,11 @@
                         <c:forEach items="${list }" var="dto">
                             <tr>
                                 <td>${dto.boaarddate }</td>
-                                <td><a href="detail.do?myno=${dto.boardno }">${dto.boardtitle }</a></td>
+                                <td><a href="detail.do?boardno=${dto.boardno }">${dto.boardtitle }</a></td>
                             </tr>
                         </c:forEach>
                     </c:otherwise>
                 </c:choose>
-                <tr>
-                    <td>2022.11.23.</td>
-                    <td><a href="#">공지사항 샘플3</a></td>
-                </tr>
-                <tr>
-                    <td>2022.11.22.</td>
-                    <td><a href="#">공지사항 샘플2</a></td>
-                </tr>
-                <tr>
-                    <td>2022.11.20.</td>
-                    <td><a href="#">공지사항 샘플1</a></td>
-                </tr>
                 <!-- <tr>
                     <td colspan="2" align="right">
                         <input type="button" value="WRITE" onclick="location.href='insertform.do'">
