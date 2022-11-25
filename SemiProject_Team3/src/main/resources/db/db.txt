@@ -16,6 +16,20 @@ CREATE TABLE MOVIEBOARD(
     MOVIEIMAGE VARCHAR(100) NOT NULL
 );
 
+insert into MOVIEBOARD (MOVIENO, MOVIETITLE, MOVIEDIRECTOR,MOVIEGENRE, MOVIEDATE,  MOVIEIMAGE)
+values (1,"1917","전쟁감독","쾅쾅","2011","src/image/1917.jpg"),
+(2,"괴물","괴물감독","동물다큐","2022","src/image/괴물.jpg"),
+(3,"극한직업","직업감독","휴먼다큐","2001","src/image/극한직업.jpg"),
+(4,"기생충","기생감독","스릴러","2021","src/image/기생충.jpg"),
+(5,"매드맥스","매드감독","레이싱","1991","src/image/매드맥스.jpg"),
+(6,"벌새","벌새감독","동물","2011","src/image/벌새.jpg"),
+(7,"아바타","아바감독","파란인간","1911","src/image/아바타.jpg"),
+(8,"어바웃타임","타임감독","시간여행","1911","src/image/어바웃타임.jpg"),
+(9,"코코","코코감독","음악여행","1889","src/image/코코.jpg"),
+(10,"해리포터","마법감독","매직","1695","src/image/해리포터.jpg"),
+(11,"화양연화","화양감독","사랑","1645","src/image/화양연화.jpg");
+
+
 CREATE TABLE BOARDINFO(
     BOARDNO INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     MEMBERID VARCHAR(20) NOT NULL, 
