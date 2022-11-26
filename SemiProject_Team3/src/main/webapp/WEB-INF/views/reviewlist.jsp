@@ -143,7 +143,7 @@
     <div class="hjreview">
         <div class="hjhead"><h2>리뷰 및 평점 등록</h2></div>
         <div class="reviewWrite">
-            <form action="" method="post">
+            <form action="/mymovie/reviewlist" method="post">
             <div>
                 <textarea rows="5" cols="70"  placeholder="리뷰를 작성해주세요."></textarea>
                 
@@ -176,7 +176,7 @@
         <div class="board">
             <div class="bd0">${reviewid }</div>
             <div class="bd1">${reviewcontent }</div>
-            <div class="bd2">★★★★★</div>
+            <div class="bd2">${reviewstar }</div>
             <div class="bd3">${reviewdate }</div>
             <div class="bd4">${likecount }</div>
             <input type="button" value="추 천" class="likebt">
