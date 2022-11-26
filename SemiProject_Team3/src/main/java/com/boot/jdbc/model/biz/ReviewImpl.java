@@ -19,4 +19,9 @@ public class ReviewImpl implements ReviewBiz{
 		return reviewMapper.selectRVList();
 	}
 
+	@Override
+	public int insertRVList(ReviewDto dto) {
+		return reviewMapper.insertRVList(dto);
+	}
+
 }
