@@ -137,7 +137,7 @@
 
 </style>
 
-<body>
+
     <img src="img/KakaoTalk_20221125_113943655.png" width="400px">
     <br><br><br><br><br><hr><br><br><br><br><br><br>
     <div class="hjreview">
@@ -178,7 +178,7 @@
             <div class="bd1">${reviewcontent }</div>
             <div class="bd2">★★★★★</div>
             <div class="bd3">${reviewdate }</div>
-            <div class="bd4">147</div>
+            <div class="bd4">${likecount }</div>
             <input type="button" value="추 천" class="likebt">
             <hr>
         </div>
@@ -199,7 +199,7 @@
    
 
     
-</body>
+
 </html>
 </body>
 </html>
