@@ -116,8 +116,8 @@
                     <c:otherwise>
                         <c:forEach items="${list }" var="dto">
                             <tr>
-                                <td>${dto.boaarddate }</td>
-                                <td><a href="detail.do?boardno=${dto.boardno }">${dto.boardtitle }</a></td>
+                                <td>${dto.boarddate }</td>
+                                <td><a href="/mymovie/detail?boardno=${dto.boardno }">${dto.boardtitle }</a></td>
                             </tr>
                         </c:forEach>
                     </c:otherwise>

@@ -5,7 +5,7 @@ import java.util.Date;
 public class NoticeDto {
 	private int boardno;
 	private String memberid;
-	private String boardtitile;
+	private String boardtitle;
 	private String boardcontent;
 	private Date boarddate;
 	
@@ -14,11 +14,11 @@ public class NoticeDto {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public NoticeDto(int boardno, String memberid, String boardtitile, String boardcontent, Date boarddate) {
+	public NoticeDto(int boardno, String memberid, String boardtitle, String boardcontent, Date boarddate) {
 		super();
 		this.boardno = boardno;
 		this.memberid = memberid;
-		this.boardtitile = boardtitile;
+		this.boardtitle = boardtitle;
 		this.boardcontent = boardcontent;
 		this.boarddate = boarddate;
 	}
@@ -35,11 +35,11 @@ public class NoticeDto {
 	public void setMemberid(String memberid) {
 		this.memberid = memberid;
 	}
-	public String getBoardtitile() {
-		return boardtitile;
+	public String getBoardtitle() {
+		return boardtitle;
 	}
-	public void setBoardtitile(String boardtitile) {
-		this.boardtitile = boardtitile;
+	public void setBoardtitile(String boardtitle) {
+		this.boardtitle = boardtitle;
 	}
 	public String getBoardcontent() {
 		return boardcontent;

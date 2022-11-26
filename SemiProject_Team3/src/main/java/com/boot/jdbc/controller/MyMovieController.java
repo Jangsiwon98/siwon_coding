@@ -13,22 +13,22 @@ import com.boot.jdbc.model.biz.NoticeBiz;
 public class MyMovieController {
 	@Autowired
 	private NoticeBiz noticeBiz;
-	
+
 	@GetMapping("/main")
 	public String main() {
 		return("main");
 	}
-	
+
 	@GetMapping("/list")
 	public String selectList(Model model) {
 		model.addAttribute("list", noticeBiz.selectList());
 		return "noticelist";
 	}
-	
+
 	@GetMapping("/detail")
 	public String selectOne(Model model, int boardno) {
 		model.addAttribute("dto", noticeBiz.selectOne(boardno));
 		return "noticedetail";
 	}
-	
+
 }

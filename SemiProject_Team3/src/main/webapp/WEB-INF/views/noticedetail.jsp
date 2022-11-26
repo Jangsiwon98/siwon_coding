@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,24 +90,23 @@
         </nav>
     </header>
     <!--공지사항-->
-    <!--공지사항-->
     <h2>공지사항</h2>
     <div id="board-list">
         <div class="container">
             <table class="board-table">
                 <tr>
                     <th>제목</th>
-                    <td>공지 1</td>
+                    <td>${dto.boardtitle }</td>
                 </tr>
                 <tr>
                     <th>작성자</th>
-                    <td>관리자</td>
+                    <td>${dto.memberid }</td>
                     <th>날짜</th>
-                    <td>2022.11.25.</td>
+                    <td>${dto.boarddate }</td>
                 </tr>
                 <tr>
                     <th>내용</th>
-                    <td>공지1 내용입니다.</td>
+                    <td><textarea rows="10" cols="40" readonly="readonly">${dto.boardcontent }</textarea></td>
                 </tr>
             </table>
         </div>
