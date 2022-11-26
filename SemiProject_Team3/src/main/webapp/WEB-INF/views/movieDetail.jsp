@@ -62,6 +62,9 @@
     </style>
 
 </head>
+
+<!-- moiveDetail -->
+
   <body>
     <!--헤더-->
     <header id="main-header">
@@ -81,19 +84,20 @@
 <hr color="#6BCDA5" size="5px">
 <section id="main-section">
     <div class="poster">
-        <a href="#"><img width="340" src="src/괴물.jpg">${dto.movieImage}</a><br>
-        <a href="#"><p calss="movie-title" style="font-size: 25px;">괴물${dto.movieTitle}</p></a>
+        <a href="#"><img width="340" src=${dto.movieimage}></a><br>
+        <a href="#"><p calss="movie-title" style="font-size: 25px;">${dto.movietitle}</p></a>
     </div>
 
-    <div class="video">
-        <video width="800px" height="450px" src="#" controls poster="#"></video>
-    </div>
-    
     <div class="detail">
-        <b>제목 : ${dto.movieTitle}</b><br>
-        <b>감독 : ${dto.movieDirector}</b><br>
-        <b>장르 : ${dto.movieGenre}</b><br>
-        <b>개봉일 : ${dto.movieDate}</b><br>
+        <p>제목 : ${dto.movietitle}</p>
+        <p>감독 : ${dto.moviedirector}</p>
+        <p>장르 : ${dto.moviegenre}</p>
+        <p>개봉일 : ${dto.moviedate}</p>
+    </div>
+    <br>
+    <br>
+    <div>
+    <button style="color:white; background-color: #6BCDA5; width:100px; height:30px;">한줄평</button>
     </div>
 
 </section>

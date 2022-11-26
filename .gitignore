@@ -25,6 +25,9 @@ hs_err_pid*
 # Created by https://www.toptal.com/developers/gitignore/api/eclipse
 # Edit at https://www.toptal.com/developers/gitignore?templates=eclipse
 
+#Local configuration file (sdk apth, etc)
+local.properties
+
 ### Eclipse ###
 .metadata
 bin/
