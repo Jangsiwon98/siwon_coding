@@ -19,11 +19,11 @@
         
         $.ajax({
             type: "GET",
-            url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult=1&q="+work+"&type=video&order=viewCount&key=AIzaSyCxiQA1_HY0qa87tAXUyf6su3k2zvEz1qg",
+            url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult=1&q="+work+"&type=video&order=viewCount&key=키",
             success: function(response){
               console.log(response);
               console.log(response.items[0].id.videoId);
-              $("#moive-player").append('<iframe width="754" height="424" src="https://www.youtube.com/embed/${response.items[0].id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+              $("#moive-player").append('<iframe width="754" height="424" src="https://www.youtube.com/embed/${response.items[0].id.videoId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 );
             }
           })
