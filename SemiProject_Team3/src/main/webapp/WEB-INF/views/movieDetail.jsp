@@ -76,7 +76,7 @@
     <!--헤더-->
     <header id="main-header">
         <div class="header-title">
-            <a><img width="400" src="src/logo.png"></a></p>
+            <a><img width="400" src="/image/logo.png"></a></p>
         </div>
         <nav class="header-menu">
             <ul>
