@@ -81,7 +81,7 @@
 <!--헤더-->
     <header id="main-header">
         <div class="header-title">
-            <a><img width="400" src="src/Logo.png"></a>
+            <a><img width="400" src="/image/logo.png"></a>
         </div>
         <nav class="header-menu">
             <ul>
@@ -103,7 +103,7 @@
                 </tr>
                 <tr>
                     <th>작성자</th>
-                    <td>${dto.memberid }</td>
+                    <td>${dto.membername }</td>
                     <th>날짜</th>
                     <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${dto.boarddate }"/></td>
                 </tr>

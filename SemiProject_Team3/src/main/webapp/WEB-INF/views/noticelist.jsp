@@ -85,7 +85,7 @@
 <!--헤더-->
     <header id="main-header">
         <div class="header-title">
-            <a><img width="400" src="src/Logo.png"></a>
+            <a><img width="400" src="/image/logo.png"></a>
         </div>
         <nav class="header-menu">
             <ul>
