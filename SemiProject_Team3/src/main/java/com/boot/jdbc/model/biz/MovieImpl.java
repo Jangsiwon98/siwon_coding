@@ -1,5 +1,7 @@
 package com.boot.jdbc.model.biz;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,11 @@ public class MovieImpl implements MovieBiz{
 	@Override
 	public MovieDto selectMovie(int movieno) {
 		return movieMapper.selectMovie(movieno);
+	}
+
+	@Override
+	public List<MovieDto> selectMovieList() {
+		return movieMapper.selectMovieList();
 	}
 
 }

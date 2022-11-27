@@ -19,17 +19,18 @@ public class MyMovieController {
 	private MovieBiz movieBiz;
 	
 	@GetMapping("/main")
-	public String main() {
+	public String main(Model model) {
+		model.addAttribute("movielist", movieBiz.selectMovieList());
 		return("main");
 	}
 
-	@GetMapping("/list")
+	@GetMapping("/noticelist")
 	public String selectList(Model model) {
-		model.addAttribute("list", noticeBiz.selectList());
+		model.addAttribute("noticelist", noticeBiz.selectList());
 		return "noticelist";
 	}
 
-	@GetMapping("/detail")
+	@GetMapping("/noticedetail")
 	public String selectOne(Model model, int boardno) {
 		model.addAttribute("dto", noticeBiz.selectOne(boardno));
 		return "noticedetail";

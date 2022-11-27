@@ -88,7 +88,7 @@
         </div>
         <nav class="header-menu">
             <ul>
-                <li><a href="#">공지사항</a></li>
+                <li><a href="mymovie/noticelist">공지사항</a></li>
             </ul>
             <ul>
                 <li><a href="#">마이페이지</a></li>
@@ -108,13 +108,13 @@
                 </thead>
                 <tbody>
                 <c:choose>
-                    <c:when test="${empty list }">
+                    <c:when test="${empty noticelist }">
                         <tr>
                             <td colspan="2" align="center">------ 작성된 글이 없습니다 ------</td>
                         </tr>
                     </c:when>
                     <c:otherwise>
-                        <c:forEach items="${list }" var="dto">
+                        <c:forEach items="${noticelist }" var="dto">
                             <tr>
                                 <td>${dto.boarddate }</td>
                                 <td><a href="/mymovie/detail?boardno=${dto.boardno }">${dto.boardtitle }</a></td>

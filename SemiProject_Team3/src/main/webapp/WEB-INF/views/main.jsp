@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,11 +81,11 @@
 <!--헤더-->
     <header id="main-header">
         <div class="header-title">
-            <a><img width="400" src="../../../../image/logo.png"></a>
+            <a><img width="400" src="src/image/logo.png"></a>
         </div>
         <nav class="header-menu">
             <ul>
-                <li><a href="/mymovie/list">공지사항</a></li>
+                <li><a href="/mymovie/noticelist">공지사항</a></li>
             </ul>
             <ul>
                 <li><a href="#">마이페이지</a></li>
@@ -93,57 +94,15 @@
     </header>
     <!--영화 리스트 영역-->
     
-    <!-- 영화 포스터 출력 및 링크(movieDetail로 이동) 완료 (채) 22.11.25.23:00-->
+    <!-- 영화 포스터 출력 및 링크(movieDetail로 이동) 수정 (고) 22.11.27.17:00-->
     <section id="main-section">
         <div class="movie-container">
-            <div class="movie-holder">
-                <a href="/mymovie/movieDetail?movieno=1"><img width="210" src="src/image/1917.jpg"></a>
-                <p class="movie-title"> <a href="/mymovie/movieDetail?movieno=1">1917</a></p>
+            <c:forEach items="${movielist }" var="dto">
+        		<div class="movie-holder">
+                <a href="/mymovie/movieDetail?movieno=${dto.movieno }"><img width="210" src="${dto.movieimage }"></a>
+                <p class="movie-title">${dto.movietitle }</p>
             </div>
-            <div class="movie-holder">
-            <a href="/mymovie/movieDetail?movieno=2"><img width="210" src="src/image/괴물.jpg"></a>
-                <p class="movie-title"><a href="/mymovie/movieDetail?movieno=2">괴물</a></p>
-            </div>
-            <div class="movie-holder">
-            	<a href="/mymovie/movieDetail?movieno=3"><img width="210" src="src/image/극한직업.jpg"></a>
-                <p class="movie-title"><a href="/mymovie/movieDetail?movieno=3">극한직업</a></p>
-            </div>
-            <div class="movie-holder">
-            <a href="/mymovie/movieDetail?movieno=4"><img width="210" src="src/image/기생충.jpg"></a>
-                <p class="movie-title"><a href="/mymovie/movieDetail?movieno=4">기생충</a></p>
-            </div>
-            <div class="movie-holder">
-            <a href="/mymovie/movieDetail?movieno=5"><img width="210" src="src/image/매드맥스.jpg"></a>
-                <p class="movie-title"> <a href="/mymovie/movieDetail?movieno=5">매드맥스</a></p>
-            </div>
-            <div class="movie-holder">
-            	<a href="/mymovie/movieDetail?movieno=6"><img width="210" src="src/image/벌새.jpg"></a>
-                <p class="movie-title">	<a href="/mymovie/movieDetail?movieno=6">벌새</a></p>
-            </div>
-            <div class="movie-holder">
-            	<a href="/mymovie/movieDetail?movieno=7"><img width="210" src="src/image/아바타.jpg"></a>
-                <p class="movie-title">	<a href="/mymovie/movieDetail?movieno=7">아바타</a></p>
-            </div>
-            <div class="movie-holder">
-            	<a href="/mymovie/movieDetail?movieno=8"><img width="210" src="src/image/어바웃타임.jpg"></a>
-                <p class="movie-title"><a href="/mymovie/movieDetail?movieno=8">어바웃타임</a></p>
-            </div>
-            <div class="movie-holder">
-            	<a href="/mymovie/movieDetail?movieno=9"><img width="210" src="src/image/코코.jpg"></a>
-                <p class="movie-title"><a href="/mymovie/movieDetail?movieno=9">코코</a></p>
-            </div>
-            <div class="movie-holder">
-            	<a href="/mymovie/movieDetail?movieno=10"><img width="210" src="src/image/해리포터.jpg"></a>
-                <p class="movie-title"><a href="/mymovie/movieDetail?movieno=10">해리포터</a></p>
-            </div>
-            <div class="movie-holder">
-            	<a href="/mymovie/movieDetail?movieno=11"><img width="210" src="src/image/화양연화.jpg"></a>
-                <p class="movie-title"><a href="/mymovie/movieDetail?movieno=11">회양연화</a></p>
-            </div>
-            <div class="movie-holder">
-                <a><img width="210" src="${dto.movieimg}"></a>
-                <p class="movie-title">${dto.movietitle}</p>
-            </div>
+        	</c:forEach>
         </div>
     </section>
 </body>
