@@ -12,7 +12,8 @@ public interface NoticeMapper {
 	@Select("SELECT * FROM BOARDINFO ORDER BY BOARDNO DESC")
 	List<NoticeDto> selectList();
 
-	@Select("SELECT * FROM BOARDTEST WHERE BOARDNO=${boardno}")
+	@Select("SELECT BOARDNO, MEMBERNAME, BOARDTITLE, BOARDCONTENT, BOARDDATE\n"
+			+ "FROM BOARDINFO, MEMBERINFO\n"
+			+ "WHERE BOARDNO=${boardno} AND BOARDINFO.MEMBERID = MEMBERINFO.MEMBERID")
 	NoticeDto selectOne(int boardno);
-	
 }
