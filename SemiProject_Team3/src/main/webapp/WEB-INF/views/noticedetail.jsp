@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,6 +66,7 @@
             padding: 14px 0; 
             border-top: 2px solid lightgray;
             border-bottom: 2px solid lightgray;
+            padding-right: 50px;
             }
         .board-table td{
             padding: 14px 0; 
@@ -72,13 +74,14 @@
             border-top: 2px solid lightgray;
             border-bottom: 2px solid lightgray;
         }
+        textarea{ border: 0px;}
     </style>
 </head>
 <body>
 <!--헤더-->
     <header id="main-header">
         <div class="header-title">
-            <a><img width="400" src="src/Logo.png"></a>
+            <a><img width="400" src="/image/logo.png"></a>
         </div>
         <nav class="header-menu">
             <ul>
@@ -100,13 +103,13 @@
                 </tr>
                 <tr>
                     <th>작성자</th>
-                    <td>${dto.memberid }</td>
+                    <td>${dto.membername }</td>
                     <th>날짜</th>
-                    <td>${dto.boarddate }</td>
+                    <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${dto.boarddate }"/></td>
                 </tr>
                 <tr>
                     <th>내용</th>
-                    <td><textarea rows="10" cols="40" readonly="readonly">${dto.boardcontent }</textarea></td>
+                    <td><textarea rows="10" cols="80" readonly="readonly">${dto.boardcontent }</textarea></td>
                 </tr>
             </table>
         </div>
