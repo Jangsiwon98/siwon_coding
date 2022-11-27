@@ -15,13 +15,15 @@ import com.boot.jdbc.model.biz.ReviewBiz;
 public class MyMovieController {
 	@Autowired
 	private NoticeBiz noticeBiz;
+	@Autowired
 	private ReviewBiz reviewBiz;
+	@Autowired
 	private MovieBiz movieBiz;
 	
 	@GetMapping("/main")
 	public String main(Model model) {
 		model.addAttribute("movielist", movieBiz.selectMovieList());
-		return("main");
+		return "main";
 	}
 
 	@GetMapping("/noticelist")
