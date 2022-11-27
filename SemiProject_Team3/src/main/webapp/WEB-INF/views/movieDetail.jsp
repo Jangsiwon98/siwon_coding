@@ -127,6 +127,9 @@
         <p>개봉일 : ${dto.moviedate}</p>
     </div>
     <br>
+    <div id="moive-player">
+    	
+    </div>
     <br>
     <div>
     <button style="color:white; background-color: #6BCDA5; width:100px; height:30px;">한줄평</button>
