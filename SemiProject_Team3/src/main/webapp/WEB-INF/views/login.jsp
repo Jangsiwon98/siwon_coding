@@ -22,44 +22,44 @@
     </style>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript">
-		$(function(){
-			$("#loginChk").hide();
-		});
-		function login(){
-			let memberid = $("#memberid").val().trim();
-			let memberpw = $("#memberpw").val().trim();
-			
-			let loginVal = {
-				"memberid":memberid,
-				"memberpw":memberpw
-			};
-			
-			if(memberid==null || memberid=="" || memberpw==null || memberpw==""){
-				alert("id 및 pw를 확인해 주세요");
-			}else{
-				$.ajax({
-					url:"login.do",
-					type:"post",
-					data:JSON.stringify(loginVal),
-					contentType:"application/json",
-					dataType:"json", 
-					success:function(msg){
-						console.log(msg);
-						if(msg.check==true){
-							location.href="list.do";
-						}else{
-							$("#loginChk").show();
-							$("#loginChk").html("ID 혹은 PW가 잘못 되었습니다.")
-						}
-					},
-					error:function(){
-						alert("통신 실패");
+	$(function(){
+		$("#loginChk").hide();
+	});
+	function login(){
+		let memberid = $("#memberid").val().trim();
+		let memberpw = $("#memberpw").val().trim();
+		
+		let loginVal = {
+			"memberid":memberid,	
+			"memberpw":memberpw
+		};
+		
+		if(memberid==null || memberid=="" || memberpw==null || memberpw==""){
+			alert("id 및 pw를 확인해 주세요");
+		}else{
+			$.ajax({
+				url:"/member/login",
+				type:"post",
+				data:JSON.stringify(loginVal),	
+				contentType:"application/json",	
+				dataType:"json", 
+				success:function(msg){
+					console.log(msg);
+					if(msg.check==true){
+						location.href="/mymovie/main";
+					}else{
+						$("#loginChk").show();
+						$("#loginChk").html("ID 혹은 PW가 잘못 되었습니다.")
 					}
-				});
-			}
-			
+				},
+				error:function(){
+					alert("통신 실패");
+				}
+			});
 		}
-	</script>
+		
+	}
+</script>
 </head>
 <body>
     <section class="vh-100 gradient-custom">
@@ -75,13 +75,13 @@
                   <p class="text-white-50 mb-5">Please enter your login and password!</p>
     
                   <div class="form-outline form-white mb-4">
-                    <input type="email" id="typeEmailX" class="form-control form-control-lg" name="memberid"/>
-                    <label class="form-label" for="typeEmailX">Email</label>
+                    <input type="email" id="memberid" class="form-control form-control-lg"/>
+                    <label class="form-label" for="memberid">Email</label>
                   </div>
     
                   <div class="form-outline form-white mb-4">
-                    <input type="password" id="typePasswordX" class="form-control form-control-lg" name="memberpw"/>
-                    <label class="form-label" for="typePasswordX">Password</label>
+                    <input type="password" id="memberpw" class="form-control form-control-lg"/>
+                    <label class="form-label" for="memberpw">Password</label>
                   </div>
     
                   <button class="btn btn-outline-light btn-lg px-5" onclick="login();">Login</button>
@@ -89,11 +89,10 @@
                 </div>
     
                 <div>
-                  <p class="mb-0">Don't have an account? <a href="signup.do" class="text-white-50 fw-bold">Sign Up</a>
+                  <p class="mb-0">Don't have an account? <a href="/member/signupform" class="text-white-50 fw-bold">Sign Up</a>
                   </p>
-                  <P id="loginchk">
-                  </P>
                 </div>
+                <div id="loginChk"></div>
     
               </div>
             </div>
