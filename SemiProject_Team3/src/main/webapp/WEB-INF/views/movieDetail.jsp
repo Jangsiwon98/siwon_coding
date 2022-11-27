@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html>
   <head>
@@ -98,7 +99,8 @@
      <!--유튜브API-->
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script type=text/javascript>
-    var work = ${dto.movietitle}+"공식 예고편";
+    
+    var work = "<c:out value='${dto.movietitle}'/>" + "공식 예고편";
     
     $.ajax({
   method: "GET",
