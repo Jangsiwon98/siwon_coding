@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,8 +117,8 @@
                     <c:otherwise>
                         <c:forEach items="${noticelist }" var="dto">
                             <tr>
-                                <td>${dto.boarddate }</td>
-                                <td><a href="/mymovie/detail?boardno=${dto.boardno }">${dto.boardtitle }</a></td>
+                                <td><fmt:formatDate pattern="yyyy-MM-dd" value="${dto.boarddate }"/></td>
+                                <td><a href="/mymovie/noticedetail?boardno=${dto.boardno }">${dto.boardtitle }</a></td>
                             </tr>
                         </c:forEach>
                     </c:otherwise>
