@@ -54,12 +54,10 @@ public class MemberController {
 		
 		MemberDto res = biz.login(dto);
 		boolean check = false;
-		logger.info("SELECT 잘 넘어가니?");
 		
 		if(res != null) {
 			session.setAttribute("login", res);
 			check=true;
-			logger.info("SELECT 잘 넘어왔다");
 		}
 		
 		Map<String, Boolean> map = new HashMap<String,Boolean>();	
