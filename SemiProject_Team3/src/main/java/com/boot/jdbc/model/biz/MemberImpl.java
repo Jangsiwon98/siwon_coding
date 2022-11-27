@@ -22,4 +22,5 @@ public class MemberImpl implements MemberBiz{
 		return memberMapper.login(dto);
 	}
 
+
 }

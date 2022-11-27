@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,35 +18,40 @@ import com.boot.jdbc.model.biz.MemberBiz;
 import com.boot.jdbc.model.dto.MemberDto;
 
 @Controller
+@RequestMapping("/member")
 public class MemberController {
+	
+	private Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
 	@Autowired
 	private MemberBiz biz;
 	
-	@RequestMapping("/login.do")
+	@RequestMapping("/loginform")
 	public String login() {
 		return "login";
 	}
 	
-	@RequestMapping("/signup.do")
+	@RequestMapping("/signupform")
 	public String signup() {
 		return "signup";
 	}
 	
-	@RequestMapping("insertres.do")
+	@RequestMapping("/signup")
 	public String insertRes(MemberDto dto) {
 		int res = biz.insert(dto);
 		
 		if(res>0) {
-			return "redirect:login.do";
+			return "redirect:/member/loginform";
 		}else {
-			return "redirect:signup.do";
+			return "redirect:/member/signupform";
 		}
 	}
 	
-	@RequestMapping(value="login.do", method=RequestMethod.POST)
+	@RequestMapping(value="login", method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Boolean> ajaxLogin(HttpSession session, @RequestBody MemberDto dto){
+		logger.info("LOGIN");
+		
 		MemberDto res = biz.login(dto);
 		boolean check = false;
 		
@@ -53,11 +60,26 @@ public class MemberController {
 			check=true;
 		}
 		
-		Map<String, Boolean> map = new HashMap<String,Boolean>();
+		Map<String, Boolean> map = new HashMap<String,Boolean>();	
 		map.put("check", check);
 		
 		return map;
 	}
+	
+//	@PostMapping("/member/login")
+//	public String login(@ModelAttribute MemberDto dto) {
+//		MemberDto loginResult = biz.login(dto);
+//		if(loginResult != null) {
+//			// 로그인 성공
+//			return "rediect:/mymovie/main";
+//		}else{
+//			// 로그인 실패
+//			return "rediect:/member/loginform";
+//		}
+//		
+//	}
+	
+	
 	
 	
 	
