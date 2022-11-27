@@ -66,6 +66,12 @@
 <!-- moiveDetail -->
 
   <body>
+  
+  	
+	
+   
+
+
     <!--헤더-->
     <header id="main-header">
         <div class="header-title">
@@ -87,8 +93,32 @@
         <a href="#"><img width="340" src=${dto.movieimage}></a><br>
         <a href="#"><p calss="movie-title" style="font-size: 25px;">${dto.movietitle}</p></a>
     </div>
+    
+    
+     <!--유튜브API-->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script type=text/javascript>
+    var work = ${dto.movietitle}+"공식 예고편";
+    
+    $.ajax({
+  method: "GET",
+  datatype: "json",
+  url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult=1&q="+work+"&type=video&key=키",
+  success : function(data){
+	  data.items.forEach(element,index){$('body').append(
+			 '<iframe id="ytpLayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed" '+element.id.videoId+' frameborder="0" allow="autoplay;" allowfullscreen></iframe>'
+				  
+	  )}
+  }
+  });
+    </script>
+    
+    
+
+
 
     <div class="detail">
+    <div>
         <p>제목 : ${dto.movietitle}</p>
         <p>감독 : ${dto.moviedirector}</p>
         <p>장르 : ${dto.moviegenre}</p>
@@ -99,6 +129,8 @@
     <div>
     <button style="color:white; background-color: #6BCDA5; width:100px; height:30px;">한줄평</button>
     </div>
+    </div>
+</div>
 
 </section>
 
