@@ -6,6 +6,28 @@
   <head>
     <meta charset="utf-8">
     <title>MOVIE DETAIL</title>
+    
+    <!--유튜브API-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript">
+    
+    window.onload=function(){
+    	
+       var work = '${dto.movietitle}'
+        
+        window.alert(work);
+        
+        $.ajax({
+            type: "GET",
+            url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult=1&q="+work+"&type=video&order=viewCount&key=AIzaSyCxiQA1_HY0qa87tAXUyf6su3k2zvEz1qg",
+            success: function(response){
+              console.log(response.items[0].id.videoId);
+              $("#moive-player").append('<iframe width="754" height="424" src="https://www.youtube.com/embed/${response.items[0].id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+);
+            }
+          })
+    }
+    </script>
   
      <!--기본 초기화-->
      <style type="text/css">
@@ -50,11 +72,7 @@
             height : 90%;
             float:left;
         }
-        .video{
-            width:50%;
-            height: 90%;
-            float:left;
-        }
+       
         .detail{
             width: 30%;
             height: 90%;
@@ -67,16 +85,11 @@
 <!-- moiveDetail -->
 
   <body>
-  
-  	
-	
-   
-
 
     <!--헤더-->
     <header id="main-header">
         <div class="header-title">
-            <a><img width="400" src="/image/logo.png"></a></p>
+            <a><img width="400" src="/image/logo.png"></a>
         </div>
         <nav class="header-menu">
             <ul>
@@ -92,32 +105,15 @@
 <section id="main-section">
     <div class="poster">
         <a href="#"><img width="340" src=${dto.movieimage}></a><br>
-        <a href="#"><p calss="movie-title" style="font-size: 25px;">${dto.movietitle}</p></a>
+        <a href="#"><p class="movie-title" style="font-size: 25px;">${dto.movietitle}</p></a>
     </div>
+    <br>
+    <br>
     
-    
-     <!--유튜브API-->
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script type=text/javascript>
-    
-    var work = "<c:out value='${dto.movietitle}'/>" + "공식 예고편";
-    
-    $.ajax({
-  method: "GET",
-  datatype: "json",
-  url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult=1&q="+work+"&type=video&key=키",
-  success : function(data){
-	  data.items.forEach(element,index){$('body').append(
-			 '<iframe id="ytpLayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed" '+element.id.videoId+' frameborder="0" allow="autoplay;" allowfullscreen></iframe>'
-				  
-	  )}
-  }
-  });
-    </script>
-    
-    
-
-
+    <div id="moive-player">
+    	
+    </div>
+     
 
     <div class="detail">
     <div>
@@ -127,9 +123,7 @@
         <p>개봉일 : ${dto.moviedate}</p>
     </div>
     <br>
-    <div id="moive-player">
-    	
-    </div>
+    
     <br>
     <div>
     <button style="color:white; background-color: #6BCDA5; width:100px; height:30px;">한줄평</button>
