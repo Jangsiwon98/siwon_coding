@@ -20,9 +20,48 @@
         background: #121319 
       }
     </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#loginChk").hide();
+		});
+		function login(){
+			let memberid = $("#memberid").val().trim();
+			let memberpw = $("#memberpw").val().trim();
+			
+			let loginVal = {
+				"memberid":memberid,
+				"memberpw":memberpw
+			};
+			
+			if(memberid==null || memberid=="" || memberpw==null || memberpw==""){
+				alert("id 및 pw를 확인해 주세요");
+			}else{
+				$.ajax({
+					url:"login.do",
+					type:"post",
+					data:JSON.stringify(loginVal),
+					contentType:"application/json",
+					dataType:"json", 
+					success:function(msg){
+						console.log(msg);
+						if(msg.check==true){
+							location.href="list.do";
+						}else{
+							$("#loginChk").show();
+							$("#loginChk").html("ID 혹은 PW가 잘못 되었습니다.")
+						}
+					},
+					error:function(){
+						alert("통신 실패");
+					}
+				});
+			}
+			
+		}
+	</script>
 </head>
 <body>
-  <form action="">
     <section class="vh-100 gradient-custom">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -36,22 +75,24 @@
                   <p class="text-white-50 mb-5">Please enter your login and password!</p>
     
                   <div class="form-outline form-white mb-4">
-                    <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                    <input type="email" id="typeEmailX" class="form-control form-control-lg" name="memberid"/>
                     <label class="form-label" for="typeEmailX">Email</label>
                   </div>
     
                   <div class="form-outline form-white mb-4">
-                    <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                    <input type="password" id="typePasswordX" class="form-control form-control-lg" name="memberpw"/>
                     <label class="form-label" for="typePasswordX">Password</label>
                   </div>
     
-                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                  <button class="btn btn-outline-light btn-lg px-5" onclick="login();">Login</button>
     
                 </div>
     
                 <div>
-                  <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
+                  <p class="mb-0">Don't have an account? <a href="signup.do" class="text-white-50 fw-bold">Sign Up</a>
                   </p>
+                  <P id="loginchk">
+                  </P>
                 </div>
     
               </div>
@@ -60,7 +101,6 @@
         </div>
       </div>
     </section>
-  </form>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </body>
 </html>

@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-  <form action="">
+  <form action="insertres.do" method="post">
     <section class="vh-100 gradient-custom">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -36,27 +36,27 @@
                   <p class="text-white-50 mb-5">Please fill in the blanks!</p>
     
                   <div class="form-outline form-white mb-4">
-                    <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                    <input type="email" id="typeEmailX" class="form-control form-control-lg" name="memberid"/>
                     <label class="form-label" for="typeEmailX">ID</label>
                   </div>
     
                   <div class="form-outline form-white mb-4">
-                    <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                    <input type="password" id="typePasswordX" class="form-control form-control-lg" name="memberpw"/>
                     <label class="form-label" for="typePasswordX">Password</label>
                   </div>
   
                   <div class="form-outline form-white mb-4">
-                    <input type="name" id="typePasswordX" class="form-control form-control-lg" />
+                    <input type="text" id="typePasswordX" class="form-control form-control-lg" name="membername"/>
                     <label class="form-label" for="typePasswordX">Name</label>
                   </div>
   
                   <div class="form-outline form-white mb-4">
-                    <input type="tel" id="typePasswordX" class="form-control form-control-lg" />
+                    <input type="text" id="typePasswordX" class="form-control form-control-lg" name="memberphone"/>
                     <label class="form-label" for="typePasswordX">Phone</label>
                   </div>
     
     
-                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Sign Up</button>
+                  <input class="btn btn-outline-light btn-lg px-5" type="submit" value="Sign Up">
     
                 </div>
     
