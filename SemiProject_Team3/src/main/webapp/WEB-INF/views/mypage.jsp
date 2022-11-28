@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -85,7 +85,7 @@
                 <li><a href="mymovie/noticelist">공지사항</a></li>
             </ul>
             <ul>
-                <li><a href="#">마이페이지</a></li>
+                <li><a href="/member/logout">로그아웃</a></li>
             </ul>
         </nav>
     </header>
@@ -103,7 +103,7 @@
                     <td>${dto.memberid }</td>
                 </tr>
                 <tr>
-                    <td>phone</td>
+                    <td>phone :</td>
                     <td>${dto.memberphone }</td>
                 </tr>
             </table>
@@ -112,13 +112,11 @@
     <h3>내가 작성한 리뷰</h3>
     <div id="reviews">
         <div class="review">
-        	<c:choose>
-            	<c:forEach items="" var="dto">
+            	<c:forEach items="${reviewlist }" var="dto">
             		<p>${dto.boardtitle }</p>
            			<p>별점 : ${dto.reviewstar }</p>
             		<p>${dto.reviewcontent }</p>
                  </c:forEach>                 
-             </c:choose>
         </div>
         <div class="review">
             <p>영화제목이 들어가요</p>

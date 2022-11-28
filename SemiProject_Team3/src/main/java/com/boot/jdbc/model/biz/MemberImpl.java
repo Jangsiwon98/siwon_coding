@@ -22,5 +22,10 @@ public class MemberImpl implements MemberBiz{
 		return memberMapper.login(dto);
 	}
 
+	@Override
+	public MemberDto mypage(MemberDto dto) {
+		return memberMapper.mypage(dto);
+	}
+
 
 }
