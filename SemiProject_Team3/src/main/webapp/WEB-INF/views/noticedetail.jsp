@@ -42,23 +42,7 @@
 </head>
 <body>
 <!--헤더-->
-<<<<<<< HEAD
-    <header id="main-header">
-        <div class="header-title">
-            <a><img width="400" src="/image/logo.png"></a>
-        </div>
-        <nav class="header-menu">
-            <ul>
-                <li><a href="mymovie/noticelist">공지사항</a></li>
-            </ul>
-            <ul>
-                <li><a href="/member/mypage">마이페이지</a></li>
-            </ul>
-        </nav>
-    </header>
-=======
     <%@ include file="./header.jsp"%>
->>>>>>> refs/remotes/origin/master
     <!--공지사항-->
     <h2>공지사항</h2>
     <div id="board-list">
