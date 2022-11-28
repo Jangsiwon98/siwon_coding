@@ -96,15 +96,15 @@
             <table>
                 <tr>
                     <td> name :</td>
-                    <td>${dto.membername }</td>
+                    <td>${login.membername }</td>
                 </tr>
                 <tr>
                     <td> i d :</td>
-                    <td>${dto.memberid }</td>
+                    <td>${login.memberid }</td>
                 </tr>
                 <tr>
                     <td>phone :</td>
-                    <td>${dto.memberphone }</td>
+                   <td>${login.memberphone }</td>
                 </tr>
             </table>
         </div>
@@ -112,7 +112,7 @@
     <h3>내가 작성한 리뷰</h3>
     <div id="reviews">
         <div class="review">
-            	<c:forEach items="${reviewlist }" var="dto">
+            	<c:forEach items="${mylist }" var="dto">
             		<p>${dto.boardtitle }</p>
            			<p>별점 : ${dto.reviewstar }</p>
             		<p>${dto.reviewcontent }</p>

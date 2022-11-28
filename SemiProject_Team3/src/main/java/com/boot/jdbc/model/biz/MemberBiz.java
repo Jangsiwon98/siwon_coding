@@ -6,5 +6,5 @@ public interface MemberBiz {
 	
 	public int insert(MemberDto dto);
 	public MemberDto login(MemberDto dto);
-	public MemberDto mypage(MemberDto dto);
+	public MemberDto selectmember(String memberid);
 }
