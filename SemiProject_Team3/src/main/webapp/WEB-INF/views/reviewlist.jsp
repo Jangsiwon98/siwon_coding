@@ -145,7 +145,7 @@
         <div class="reviewWrite">
             <form action="/mymovie/reviewlist" method="post">
             <div>
-                <textarea rows="5" cols="70"  placeholder="리뷰를 작성해주세요."></textarea>
+                <textarea rows="5" cols="70"  placeholder="리뷰를 작성해주세요.">${reviewcontent }</textarea>
                 
             </div>
             <div name="myform" id="myform">
