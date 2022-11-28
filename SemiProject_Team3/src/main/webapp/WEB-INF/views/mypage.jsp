@@ -112,16 +112,18 @@
     <h3>내가 작성한 리뷰</h3>
     <div id="reviews">
         <div class="review">
+        <c:choose>
+      		  <c:when test="${empty mylist }">
+                   <p>------ 작성된 글이 없습니다 ------</p>
+              </c:when>
+              <c:otherwise>
             	<c:forEach items="${mylist }" var="dto">
             		<p>${dto.boardtitle }</p>
            			<p>별점 : ${dto.reviewstar }</p>
             		<p>${dto.reviewcontent }</p>
-                 </c:forEach>                 
-        </div>
-        <div class="review">
-            <p>영화제목이 들어가요</p>
-            <p>별점 : 내가 준 별점이 들어가요</p>
-            <p>내가 작성한 리뷰내용이 들어가요</p>
+                 </c:forEach>    
+              </c:otherwise>        
+        </c:choose>              
         </div>
         
     </div>

@@ -18,4 +18,6 @@ public interface MemberMapper {
 	@Select(" SELECT MEMBERID,MEMBERNAME,MEMBERPHNE FROM MEMBERINFO WHERE MEMBERID=#{memberid}")
 	MemberDto selectmember(String memberid);
 
+	@Select(" SELECT REVIEWDATE, REVIEWSTAR, REVIEWCONTENT FROM MEMBERINFO JOIN REVIEWBOARD ON MEMBERINFO.MRMBERID=REVIEWBOARD.REVIEWID WHERE MEMBERID=#{memberid}")
+	MemberDto selectmyreview(String memberid);
 }

@@ -29,5 +29,10 @@ public class MemberImpl implements MemberBiz{
 		return memberMapper.selectmember(memberid);
 	}
 
+	@Override
+	public MemberDto selectmyreview(String memberid) {
+		return memberMapper.selectmyreview(memberid);
+	}
+
 
 }

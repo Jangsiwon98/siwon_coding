@@ -103,7 +103,7 @@ public class MemberController {
 		
 //		String memberid = (String) session.getAttribute("memberid");
 //		System.out.println(memberid);
-//		model.addAttribute("listdto", member);
+		model.addAttribute("listdto", member);
 		return "mypage";
 	}
 	
