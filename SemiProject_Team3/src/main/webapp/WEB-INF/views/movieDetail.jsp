@@ -16,7 +16,7 @@
        var work = '${dto.movietitle}'+" 예고편";
         $.ajax({
             type: "GET",
-            url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult=1&q="+work+"&type=video&order=viewCount&key=AIzaSyCxiQA1_HY0qa87tAXUyf6su3k2zvEz1qg",
+            url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult=1&q="+work+"&type=video&order=viewCount&key=키",
             success: function(response){
               console.log(response);
               console.log(response.items[0].id.videoId);
