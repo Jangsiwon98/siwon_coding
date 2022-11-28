@@ -24,6 +24,7 @@
         img{ border: 0; }
         li{ display: inline-block; }
     </style>
+    
     <!--헤더-->
     <style type="text/css">
         #main-header{
