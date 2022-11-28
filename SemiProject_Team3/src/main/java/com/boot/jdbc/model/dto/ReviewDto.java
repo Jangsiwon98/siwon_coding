@@ -82,6 +82,13 @@ public class ReviewDto {
 	public void setReviewid(String reviewid) {
 		this.reviewid = reviewid;
 	}
+
+	@Override
+	public String toString() {
+		return "ReviewDto [reviewno=" + reviewno + ", reviewcontent=" + reviewcontent + ", reviewstar=" + reviewstar
+				+ ", reviewdate=" + reviewdate + ", reviewlike=" + reviewlike + ", reviewid=" + reviewid
+				+ ", likecount=" + likecount + "]";
+	}
 	
 	
 	

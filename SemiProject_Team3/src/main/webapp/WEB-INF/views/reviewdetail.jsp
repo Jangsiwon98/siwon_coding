@@ -81,7 +81,7 @@
                         </tr>
                         <tr>
                             <div>작성일: </div>
-                            <div><input type="text" name="reviewdate" placeholder="year-month-date"></div>
+                            <div><input type="text" name="reviewdate" placeholder="ex)00-00-00"></div>
                         </tr>
                     </div>
                     <br><br>

@@ -21,6 +21,7 @@ public class ReviewImpl implements ReviewBiz{
 
 	@Override
 	public int insertRVList(ReviewDto dto) {
+		System.out.println(dto);
 		return reviewMapper.insertRVList(dto);
 	}
 
