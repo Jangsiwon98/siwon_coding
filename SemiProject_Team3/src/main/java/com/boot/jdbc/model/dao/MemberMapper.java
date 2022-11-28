@@ -15,6 +15,7 @@ public interface MemberMapper {
 	@Select(" SELECT * FROM MEMBERINFO WHERE MEMBERID=#{memberid} AND MEMBERPW=#{memberpw} ")
 	MemberDto login(MemberDto dto);
 
-	
+	@Select(" SELECT MEMBERID,MEMBERNAME,MEMBERPHNE FROM MEMBERINFO WHERE MEMBERID=#{memberid}")
+	MemberDto selectmember(String memberid);
 
 }

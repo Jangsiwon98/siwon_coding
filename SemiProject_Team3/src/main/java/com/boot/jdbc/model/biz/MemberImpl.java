@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.boot.jdbc.model.dao.MemberMapper;
 import com.boot.jdbc.model.dto.MemberDto;
+import com.boot.jdbc.model.dto.NoticeDto;
 
 @Service
 public class MemberImpl implements MemberBiz{
@@ -20,6 +21,12 @@ public class MemberImpl implements MemberBiz{
 	@Override
 	public MemberDto login(MemberDto dto) {
 		return memberMapper.login(dto);
+	}
+
+	@Override
+	public MemberDto selectmember(String memberid) {
+		// TODO Auto-generated method stub
+		return memberMapper.selectmember(memberid);
 	}
 
 

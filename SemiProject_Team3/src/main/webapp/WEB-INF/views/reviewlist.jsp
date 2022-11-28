@@ -56,7 +56,7 @@
         color: lightgray;
     }
     .board .bd0{
-        width: 5%
+        width: 80px;
     }
     .board .bd1{
         width: 40.8%
@@ -105,10 +105,15 @@
 <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script>
 	$(function(){
-		if(likebt.click=function(){
-			${likecount}+=1;
+		if((".likebt").click=function(){
+			${dto.likecount}+=1;
+			alert("이 영화를 추천 하셨습니다.");
 		});
 	});
+	
+	function clicklike(){
+			alert("이 영화를 추천 하셨습니다.");
+	}
 </script>
    <a><img width="400" src="/image/logo.png"></a>
     <br><br><br><br><hr><br>
@@ -135,7 +140,8 @@
             <div class="bd1">${dto.reviewcontent }</div>
             <div class="bd2">${dto.reviewstar }</div>
             <div class="bd3">${dto.reviewdate }</div>
-            <div class="bd4">${dto.likecount }<input type="button" value="추 천" class="likebt"></div>
+            <div class="bd4">${dto.likecount }</div>
+            <input type="button" value="추 천" class="likebt" onclick="clicklike()">
             <hr>
         </div>
         </c:forEach>

@@ -23,5 +23,19 @@ public class NoticeImpl implements NoticeBiz{
 	public NoticeDto selectOne(int boardno) {
 		return noticeMapper.selectOne(boardno);
 	}
+	
+	@Override
+	public int insert(NoticeDto dto) {
+		return noticeMapper.insert(dto);
+	}
 
+	@Override
+	public int update(NoticeDto dto) {
+		return noticeMapper.update(dto);
+	}
+
+	@Override
+	public int delete(int boardno) {
+		return noticeMapper.delete(boardno);
+	}
 }
