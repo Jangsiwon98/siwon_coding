@@ -5,45 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!--기본 초기화-->
-    <style type="text/css">
-        *{
-            margin: 100; padding: 50;
-            background-color: #121319;
-            color: #f5f7ff;
-            font-family: sans-serif;
-        }
-        a{ text-decoration: none;  
-            color: lightgray;
-            cursor: pointer;
-        }
-        img{ border: 0; }
-        li{ display: inline-block; }
-    </style>
-    <!--헤더-->
-    <style type="text/css">
-        #main-header{
-            height: 100px;
-            position: relative;
-            margin-top: 100px;
-        }
-        .header-title{
-            position: absolute;
-            width: 400px; height: 100px;
-            left: 50%; 
-            margin-left: -150px;
-        }
-        .header-menu{
-            float: right; 
-            margin-top: 10px;
-            margin-right: 20px;
-        }
-        ul{
-            float: left; width: 80px; text-align: center; margin-right: 10px;
-        }
-    </style>
     <!-- 공지사항 -->
-    <style tyoe="text/css">
+    <style type="text/css">
         h2{ 
             margin-left: 100px;
             margin-top: 100px;
@@ -79,6 +42,7 @@
 </head>
 <body>
 <!--헤더-->
+<<<<<<< HEAD
     <header id="main-header">
         <div class="header-title">
             <a><img width="400" src="/image/logo.png"></a>
@@ -92,6 +56,9 @@
             </ul>
         </nav>
     </header>
+=======
+    <%@ include file="./header.jsp"%>
+>>>>>>> refs/remotes/origin/master
     <!--공지사항-->
     <h2>공지사항</h2>
     <div id="board-list">
@@ -111,6 +78,13 @@
                     <th>내용</th>
                     <td><textarea rows="10" cols="80" readonly="readonly">${dto.boardcontent }</textarea></td>
                 </tr>
+                <tr>
+					<td colspan="4" align="right">
+						<input type="button" value="수정" onclick="location.href='/mymovie/notice/updateform?boardno=${dto.boardno}'">
+						<input type="button" value="삭제" onclick="location.href='/mymovie/notice/delete?boardno=${dto.boardno}'">
+						<input type="button" value="목록" onclick="location.href='/mymovie/notice/list'">
+					</td>
+				</tr>
             </table>
         </div>
     </div>
