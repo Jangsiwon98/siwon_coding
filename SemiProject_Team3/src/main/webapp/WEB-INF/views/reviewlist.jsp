@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <style>
     body{
         background-color: #121319;
@@ -44,10 +45,7 @@
     .hjlist .hj4{
         width: 11%;
     }
-    .hjhead{
-        color: #3cd1a3;
-        margin-left: 380px;
-    }
+    
     .listhead{
         color: #3cd1a3
     }
@@ -93,74 +91,33 @@
             left: 50%; 
             margin-left: -150px;
     }
-    textarea{
-        margin-left: 370px;
-        font-size: 20px;
-    }
-    #myform fieldset{
-    display: inline-block; 
-    border: 0; 
-}
-#myform input[type=radio]{
-    display: none; 
-}
-#myform label{
-    font-size: 3em;
-    color: transparent;
-    text-shadow: 0 0 0 #f0f0f0; 
-}
-#myform label:hover{
-    text-shadow: 0 0 0 rgb(186, 186, 0); 
-}
-#myform label:hover ~ label{
-    text-shadow: 0 0 0 rgb(186, 186, 0);; 
-}
-#myform fieldset{
-    display: inline-block; 
-    direction: rtl; 
-    border: 0; 
-}
-#myform input[type=radio]:checked ~ label{
-    text-shadow: 0 0 0 rgb(186, 186, 0);
-}
-#myform{
-    margin-left: 560px;
-}
-#smbt{
-    margin-left: 950px;
-}
+
 .likebt{
     margin-left: 1040px;
     margin-top: 20px;
 }
+.writebt{
+	margin-left: 1100px;
+}
 
 
 </style>
-
-
-    <img src="img/KakaoTalk_20221125_113943655.png" width="400px">
-    <br><br><br><br><br><hr><br><br><br><br><br><br>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		if(likebt.click=function(){
+			${likecount}+=1;
+		});
+	});
+</script>
+   <a><img width="400" src="/image/logo.png"></a>
+    <br><br><br><br><hr><br>
     <div class="hjreview">
-        <div class="hjhead"><h2>리뷰 및 평점 등록</h2></div>
-        <div class="reviewWrite">
-            <form action="/mymovie/reviewlist" method="post">
-            <div>
-                <textarea rows="5" cols="70"  placeholder="리뷰를 작성해주세요.">${reviewcontent }</textarea>
-                
-            </div>
-            <div name="myform" id="myform">
-                <fieldset>
-                    <input type="radio" name="rating" value="5" id="rate1"><label for="rate1">⭐</label>
-                    <input type="radio" name="rating" value="4" id="rate2"><label for="rate2">⭐</label>
-                    <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">⭐</label>
-                    <input type="radio" name="rating" value="2" id="rate4"><label for="rate4">⭐</label>
-                    <input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
-                </fieldset>
-            </div>
-            <br><br>
-            <input id="smbt" type="submit" value="한 줄 리뷰 작성">
-        </form>
+        
             <br><br><br><br>
+            <div class="writebt">
+        	<input type="button" value="한 줄 리뷰 작성하기" onclick="location.href='/mymovie/reviewinsert'">
+        </div><br><br>
         </div>
         <div class="wrapper">
         <div class="hjlist">
@@ -172,17 +129,16 @@
             <div class="hj4"><b>좋아요 수</b></div>
         </div>
         <br><hr><br>
-        
+        <c:forEach items="${reviewlist }" var="dto">
         <div class="board">
-            <div class="bd0">${reviewid }</div>
-            <div class="bd1">${reviewcontent }</div>
-            <div class="bd2">${reviewstar }</div>
-            <div class="bd3">${reviewdate }</div>
-            <div class="bd4">${likecount }</div>
-            <input type="button" value="추 천" class="likebt">
+            <div class="bd0">${dto.reviewid }</div>
+            <div class="bd1">${dto.reviewcontent }</div>
+            <div class="bd2">${dto.reviewstar }</div>
+            <div class="bd3">${dto.reviewdate }</div>
+            <div class="bd4">${dto.likecount }<input type="button" value="추 천" class="likebt"></div>
             <hr>
         </div>
-        
+        </c:forEach>
         
        
     </div>

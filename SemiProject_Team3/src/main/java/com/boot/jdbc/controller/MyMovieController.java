@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.boot.jdbc.model.biz.MovieBiz;
 import com.boot.jdbc.model.biz.NoticeBiz;
 import com.boot.jdbc.model.biz.ReviewBiz;
+import com.boot.jdbc.model.dto.ReviewDto;
 
 @Controller
 @RequestMapping("/mymovie")
@@ -40,10 +42,22 @@ public class MyMovieController {
 
 	@GetMapping("/reviewlist")
 	public String selectRVList(Model model) {
-		model.addAttribute("list", reviewBiz.selectRVList());
+		model.addAttribute("reviewlist", reviewBiz.selectRVList());
 		return "reviewlist";
 	}
-	
+	@GetMapping("/reviewinsert")
+	public String insertRVListform() {
+		return "/reviewdetail";
+	}
+	@PostMapping("/insertform")
+	public String insertRVList(Model model, ReviewDto dto) {
+		model.addAttribute("dto", reviewBiz.insertRVList(dto));
+		if(reviewBiz.insertRVList(dto)>0) {
+			return "redirect:/mymovie/reviewlist";
+		}else {
+			return "redirect:/mymovie/insertform";
+		}
+	}
 	//===영화상세페이지 관련(채)===
 	
 	@GetMapping("/movieDetail")
@@ -51,5 +65,7 @@ public class MyMovieController {
 		model.addAttribute("dto", movieBiz.selectMovie(movieno));
 		return "movieDetail";
 	}
+	
+	
 	
 }
