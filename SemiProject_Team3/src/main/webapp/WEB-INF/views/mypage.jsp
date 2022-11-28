@@ -108,6 +108,7 @@
                 </tr>
             </table>
         </div>
+        
     </div>
     <h3>내가 작성한 리뷰</h3>
     <div id="reviews">
@@ -118,9 +119,9 @@
               </c:when>
               <c:otherwise>
             	<c:forEach items="${mylist }" var="dto">
-            		<p>${dto.boardtitle }</p>
-           			<p>별점 : ${dto.reviewstar }</p>
-            		<p>${dto.reviewcontent }</p>
+            		<p>${listdto.reviewdate }</p>
+           			<p>별점 : ${listdto.reviewstar }</p>
+            		<p>${listdto.reviewcontent }</p>
                  </c:forEach>    
               </c:otherwise>        
         </c:choose>              
