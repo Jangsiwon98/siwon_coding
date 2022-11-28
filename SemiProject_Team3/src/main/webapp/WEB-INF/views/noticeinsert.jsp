@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,31 +45,28 @@
     <!--공지사항-->
     <h2>공지사항</h2>
     <div id="board-list">
-        <div class="container">
-            <table class="board-table">
-                <tr>
-                    <th>제목</th>
-                    <td>${dto.boardtitle }</td>
-                </tr>
-                <tr>
-                    <th>작성자</th>
-                    <td>${dto.membername }</td>
-                    <th>날짜</th>
-                    <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${dto.boarddate }"/></td>
-                </tr>
-                <tr>
-                    <th>내용</th>
-                    <td><textarea rows="10" cols="80" readonly="readonly">${dto.boardcontent }</textarea></td>
-                </tr>
-                <tr>
-					<td colspan="4" align="right">
-						<input type="button" value="수정" onclick="location.href='/mymovie/notice/updateform?boardno=${dto.boardno}'">
-						<input type="button" value="삭제" onclick="location.href='/mymovie/notice/delete?boardno=${dto.boardno}'">
-						<input type="button" value="목록" onclick="location.href='/mymovie/notice/list'">
-					</td>
-				</tr>
-            </table>
-        </div>
+    <form action="/mymovie/notice/insert" method="post">
+        <table class="board-table">
+        	<tr>
+                <th>작성자ID</th>
+                <td><input type="text" name="memberid"></td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td><input type="text" name="boardtitle"></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td><textarea rows="10" cols="80" name="boardcontent"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+					<input type="submit" value="등록">
+					<input type="button" value="취소" onclick="location.href='/mymovie/notice/list'">
+				</td>
+            </tr>
+        </table>
+    </form>
     </div>
 </body>
 </html>
