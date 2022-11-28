@@ -39,6 +39,17 @@
             margin-top: 8px;
         }
     </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".movie-holder").mouseenter(function(){
+                $(this).css({'padding-top': '0px'});
+            });
+            $(".movie-holder").mouseleave(function(){
+                $(this).css({'padding-top': '20px'});
+            });
+        });
+    </script>
 </head>
 <body>
 <!--헤더-->
