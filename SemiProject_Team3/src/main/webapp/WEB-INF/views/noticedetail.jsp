@@ -88,7 +88,7 @@
                 <li><a href="mymovie/noticelist">공지사항</a></li>
             </ul>
             <ul>
-                <li><a href="#">마이페이지</a></li>
+                <li><a href="/member/mypage">마이페이지</a></li>
             </ul>
         </nav>
     </header>
