@@ -69,7 +69,7 @@
                         <c:forEach items="${noticelist }" var="dto">
                             <tr>
                                 <td><fmt:formatDate pattern="yyyy-MM-dd" value="${dto.boarddate }"/></td>
-                                <td><a href="/mymovie/noticedetail?boardno=${dto.boardno }">${dto.boardtitle }</a></td>
+                                <td><a href="/mymovie/notice/detail?boardno=${dto.boardno }">${dto.boardtitle }</a></td>
                             </tr>
                         </c:forEach>
                     </c:otherwise>

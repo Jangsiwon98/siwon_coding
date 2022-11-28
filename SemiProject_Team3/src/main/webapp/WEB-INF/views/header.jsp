@@ -51,7 +51,7 @@
         </div>
         <nav class="header-menu">
             <ul>
-                <li><a href="notice/list">공지사항</a></li>
+                <li><a href="/mymovie/notice/list">공지사항</a></li>
             </ul>
             <ul>
                 <li><a href="#">마이페이지</a></li>
