@@ -107,12 +107,12 @@
 	$(function(){
 		if((".likebt").click=function(){
 			${dto.likecount}+=1;
-			alert("이 영화를 추천 하셨습니다.");
+			alert("이 리뷰를 추천 하셨습니다.");
 		});
 	});
 	
 	function clicklike(){
-			alert("이 영화를 추천 하셨습니다.");
+			alert("이 리뷰를 추천 하셨습니다.");
 	}
 </script>
    <a><img width="400" src="/image/logo.png"></a>
