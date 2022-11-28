@@ -14,16 +14,13 @@
     window.onload=function(){
     	
        var work = '${dto.movietitle}'+" 예고편";
-        
-        window.alert(work);
-        
         $.ajax({
             type: "GET",
-            url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult=1&q="+work+"&type=video&order=viewCount&key=키",
+            url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult=1&q="+work+"&type=video&order=viewCount&key=AIzaSyCxiQA1_HY0qa87tAXUyf6su3k2zvEz1qg",
             success: function(response){
               console.log(response);
               console.log(response.items[0].id.videoId);
-              $("#moive-player").append('<iframe width="754" height="424" src="https://www.youtube.com/embed/${response.items[0].id.videoId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+              $("#moive-player").append('<iframe width="650" height="400" src="https://www.youtube.com/embed/'+response.items[0].id.videoId+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 );
             }
           })
@@ -75,9 +72,14 @@
         }
        
         .detail{
-            width: 30%;
+            width: 20%;
             height: 90%;
             float:right;
+        }
+        #movie-player{
+        	width: 35%;
+            height: 90%;
+            float:left;
         }
     </style>
 
@@ -108,9 +110,7 @@
         <a href="#"><img width="340" src=${dto.movieimage}></a><br>
         <a href="#"><p class="movie-title" style="font-size: 25px;">${dto.movietitle}</p></a>
     </div>
-    <br>
-    <br>
-    
+   
     <div id="moive-player">
     	
     </div>
