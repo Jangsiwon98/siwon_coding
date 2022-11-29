@@ -67,7 +67,7 @@
     }
         </style>
         <body>
-        <a><img width="400" src="/image/logo.png"></a>
+        <a><img width="400" src="/image/logo.png" onclick="location.href='/mymovie/main'"></a>
             <br><br><br><br><hr><br><br>
             <div class="hjhead"><h2>리뷰 및 평점 등록</h2></div><br>
                 <div class="reviewWrite">

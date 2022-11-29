@@ -107,7 +107,7 @@
 <script>
 
 </script>
-   <a><img width="400" src="/image/logo.png"></a>
+   <a><img width="400" src="/image/logo.png" onclick="location.href='/mymovie/main'"></a>
     <br><br><br><br><hr><br>
     <div class="hjreview">
         
