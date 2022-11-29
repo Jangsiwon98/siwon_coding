@@ -77,7 +77,7 @@
                         <div class="mover">
                         <tr>
                             <div>아이디: </div>
-                            <div><input type="text" name="memberid"></div>
+                            <div><input type="text" name="memberid" placeholder="이메일을 입력해주세요."></div>
                         </tr>
                     </div>
                     <br><br>

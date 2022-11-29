@@ -125,7 +125,7 @@
             <div class="hj3"><b>작성 날짜</b></div>
             <div class="hj4"><b>좋아요 수</b></div>
         </div>
-        <br><hr><br>
+        <br><hr>
         <c:forEach items="${reviewlist }" var="dto">
         <div class="board">
             <div class="bd0">${dto.memberid }</div>
