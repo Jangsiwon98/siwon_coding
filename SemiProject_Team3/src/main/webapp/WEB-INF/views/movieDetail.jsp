@@ -127,7 +127,7 @@
     
     <br>
     <div>
-    <button style="color:white; background-color: #6BCDA5; width:100px; height:30px;">한줄평</button>
+    <button style="color:white; background-color: #6BCDA5; width:100px; height:30px;" onclick="location.href='/mymovie/reviewlist'">한줄평</button>
     </div>
     </div>
 </div>

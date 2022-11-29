@@ -76,8 +76,8 @@
                     <div class="reviewname">
                         <div class="mover">
                         <tr>
-                            <div>별명: </div>
-                            <div><input type="text" name="reviewid"></div>
+                            <div>아이디: </div>
+                            <div><input type="text" name="memberid"></div>
                         </tr>
                         <tr>
                             <div>작성일: </div>

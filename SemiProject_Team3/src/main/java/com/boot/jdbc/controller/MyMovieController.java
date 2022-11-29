@@ -91,7 +91,6 @@ public class MyMovieController {
 	}
 	@PostMapping("/insertform")
 	public String insertRVList(Model model, ReviewDto dto) {
-		model.addAttribute("dto", reviewBiz.insertRVList(dto));
 		if(reviewBiz.insertRVList(dto)>0) {
 			return "redirect:/mymovie/reviewlist";
 		}else {

@@ -104,16 +104,7 @@
 </style>
 <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script>
-	$(function(){
-		if((".likebt").click=function(){
-			${dto.likecount}+=1;
-			alert("이 리뷰를 추천 하셨습니다.");
-		});
-	});
-	
-	function clicklike(){
-			alert("이 리뷰를 추천 하셨습니다.");
-	}
+
 </script>
    <a><img width="400" src="/image/logo.png"></a>
     <br><br><br><br><hr><br>
@@ -136,7 +127,7 @@
         <br><hr><br>
         <c:forEach items="${reviewlist }" var="dto">
         <div class="board">
-            <div class="bd0">${dto.reviewid }</div>
+            <div class="bd0">${dto.memberid }</div>
             <div class="bd1">${dto.reviewcontent }</div>
             <div class="bd2">${dto.reviewstar }</div>
             <div class="bd3">${dto.reviewdate }</div>
