@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -130,9 +131,9 @@
             <div class="bd0">${dto.memberid }</div>
             <div class="bd1">${dto.reviewcontent }</div>
             <div class="bd2">${dto.reviewstar }</div>
-            <div class="bd3">${dto.reviewdate }</div>
+            <div class="bd3"><fmt:formatDate pattern="yy-MM-dd" value="${dto.reviewdate }"/></div>
             <div class="bd4">${dto.likecount }</div>
-            <input type="button" value="추 천" class="likebt" onclick="clicklike()">
+            <input type="button" value="추 천" class="likebt">
             <hr>
         </div>
         </c:forEach>

@@ -6,7 +6,7 @@ public class ReviewDto {
 	private int reviewno;
 	private String reviewcontent;
 	private String reviewstar;
-	private String reviewdate;
+	private Date reviewdate;
 	private String memberid;
 	private int likecount;
 	
@@ -17,7 +17,7 @@ public class ReviewDto {
 	}
 
 
-	public ReviewDto(int reviewno, String reviewcontent, String reviewstar, String reviewdate, String memberid,
+	public ReviewDto(int reviewno, String reviewcontent, String reviewstar, Date reviewdate, String memberid,
 			int likecount) {
 		super();
 		this.reviewno = reviewno;
@@ -59,12 +59,12 @@ public class ReviewDto {
 	}
 
 
-	public String getReviewdate() {
+	public Date getReviewdate() {
 		return reviewdate;
 	}
 
 
-	public void setReviewdate(String reviewdate) {
+	public void setReviewdate(Date reviewdate) {
 		this.reviewdate = reviewdate;
 	}
 

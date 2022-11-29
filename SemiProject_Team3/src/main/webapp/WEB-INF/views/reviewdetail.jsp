@@ -79,10 +79,6 @@
                             <div>아이디: </div>
                             <div><input type="text" name="memberid"></div>
                         </tr>
-                        <tr>
-                            <div>작성일: </div>
-                            <div><input type="text" name="reviewdate" placeholder="ex)00-00-00"></div>
-                        </tr>
                     </div>
                     <br><br>
                 </div>
