@@ -110,7 +110,8 @@
    <a><img width="400" src="/image/logo.png" onclick="location.href='/mymovie/main'"></a>
     <br><br><br><br><hr><br>
     <div class="hjreview">
-        
+      
+      
             <br><br><br><br>
             <div class="writebt">
         	<input type="button" value="한 줄 리뷰 작성하기" onclick="location.href='/mymovie/reviewinsert'">
