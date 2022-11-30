@@ -9,7 +9,7 @@ import com.boot.jdbc.model.dto.MemberDto;
 @Mapper
 public interface MemberMapper {
 
-	@Insert(" INSERT INTO MEMBERINFO VALUES(#{memberid}, #{memberpw}, #{membername}, #{memberphone}, 'N', 'N') ")
+	@Insert(" INSERT INTO MEMBERINFO VALUES(#{memberid}, #{memberpw}, #{membername}, #{memberphone}, '2', 'general') ")
 	int insert(MemberDto dto);
 
 	@Select(" SELECT * FROM MEMBERINFO WHERE MEMBERID=#{memberid} AND MEMBERPW=#{memberpw} ")

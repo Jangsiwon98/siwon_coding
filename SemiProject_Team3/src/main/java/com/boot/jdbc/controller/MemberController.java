@@ -69,18 +69,6 @@ public class MemberController {
 		return map;
 	}
 	
-//	@PostMapping("/member/login")
-//	public String login(@ModelAttribute MemberDto dto) {
-//		MemberDto loginResult = biz.login(dto);
-//		if(loginResult != null) {
-//			// 로그인 성공
-//			return "rediect:/mymovie/main";
-//		}else{
-//			// 로그인 실패
-//			return "rediect:/member/loginform";
-//		}
-//		
-//	}
 	
 
 	

@@ -11,11 +11,20 @@ public class InterceptorConfig implements WebMvcConfigurer{
 	@Autowired
 	private NoticeInterceptor noticeInterceptor;
 	
+	@Autowired
+	LoginInterceptor loginInterceptor;
+	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(noticeInterceptor)
 									.addPathPatterns("/mymovie/notice/*")
 									.excludePathPatterns("/mymovie/notice/list")
 									.excludePathPatterns("/mymovie/notice/detail");
+		
+		registry.addInterceptor(loginInterceptor)
+				.addPathPatterns("/**")
+				.excludePathPatterns("/member/**");
+		
+		
 	}
 }
