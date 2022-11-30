@@ -1,11 +1,14 @@
 package com.boot.jdbc.model.biz;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.boot.jdbc.model.dao.MemberMapper;
 import com.boot.jdbc.model.dto.MemberDto;
 import com.boot.jdbc.model.dto.NoticeDto;
+import com.boot.jdbc.model.dto.ReviewDto;
 
 @Service
 public class MemberImpl implements MemberBiz{
@@ -30,9 +33,11 @@ public class MemberImpl implements MemberBiz{
 	}
 
 	@Override
-	public MemberDto selectmyreview(String memberid) {
+	public List<ReviewDto> selectmyreview(String memberid) {
 		return memberMapper.selectmyreview(memberid);
 	}
+
+	
 
 
 }

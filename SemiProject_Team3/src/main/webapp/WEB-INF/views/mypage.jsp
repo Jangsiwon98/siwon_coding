@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,14 +115,14 @@
     <div id="reviews">
         <div class="review">
         <c:choose>
-      		  <c:when test="${empty mylist }">
+      		  <c:when test="${empty listdto}">
                    <p>------ 작성된 글이 없습니다 ------</p>
               </c:when>
               <c:otherwise>
-            	<c:forEach items="${mylist }" var="dto">
-            		<p>${listdto.reviewdate }</p>
-           			<p>별점 : ${listdto.reviewstar }</p>
-            		<p>${listdto.reviewcontent }</p>
+            	<c:forEach items="${listdto}" var="listdto">
+            		<p>작성일 : <fmt:formatDate pattern="yy-MM-dd" value="${listdto.reviewdate}"/></p>
+           			<p>별점 : ${listdto.reviewstar}</p>
+            		<p>${listdto.reviewcontent}</p>
                  </c:forEach>    
               </c:otherwise>        
         </c:choose>              

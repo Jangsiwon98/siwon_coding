@@ -55,7 +55,7 @@
             </ul>
             <ul>
                 <li><a href="/member/mypage">마이페이지</a></li>
-            </ul>
+            </ul> 
         </nav>
     </header>
 </body>

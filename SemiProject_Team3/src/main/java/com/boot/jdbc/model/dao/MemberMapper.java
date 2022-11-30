@@ -1,10 +1,13 @@
 package com.boot.jdbc.model.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import com.boot.jdbc.model.dto.MemberDto;
+import com.boot.jdbc.model.dto.ReviewDto;
 
 @Mapper
 public interface MemberMapper {
@@ -18,6 +21,7 @@ public interface MemberMapper {
 	@Select(" SELECT MEMBERID,MEMBERNAME,MEMBERPHNE FROM MEMBERINFO WHERE MEMBERID=#{memberid}")
 	MemberDto selectmember(String memberid);
 
-	@Select(" SELECT REVIEWDATE, REVIEWSTAR, REVIEWCONTENT FROM MEMBERINFO JOIN REVIEWBOARD ON MEMBERINFO.MRMBERID=REVIEWBOARD.REVIEWID WHERE MEMBERID=#{memberid}")
-	MemberDto selectmyreview(String memberid);
+	
+	@Select("SELECT * FROM MEMBERINFO INNER JOIN REVIEWBOARD ON MEMBERINFO.MEMBERID = REVIEWBOARD.MEMBERID WHERE MEMBERINFO.MEMBERID=#{memberid} ")
+	List<ReviewDto> selectmyreview(String memberid);
 }

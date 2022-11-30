@@ -1,6 +1,7 @@
 package com.boot.jdbc.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.boot.jdbc.model.biz.MemberBiz;
 import com.boot.jdbc.model.dto.MemberDto;
+import com.boot.jdbc.model.dto.ReviewDto;
 
 @Controller
 @RequestMapping("/member")
@@ -85,13 +87,12 @@ public class MemberController {
 	}
 	
 	@GetMapping("/mypage")
-	public String selectmember(HttpServletRequest request,Model model) {
-		HttpSession session = request.getSession();
+	public String selectmember(HttpSession session,Model model) {
 		MemberDto member = (MemberDto) session.getAttribute("login");
 		
-//		String memberid = (String) session.getAttribute("memberid");
-//		System.out.println(memberid);
-		model.addAttribute("listdto", member);
+		model.addAttribute("list", member.getMemberid());
+		model.addAttribute("listdto", biz.selectmyreview(member.getMemberid()) );
+		
 		return "mypage";
 	}
 	
