@@ -109,7 +109,6 @@
                 </tr>
             </table>
         </div>
-        
     </div>
     <h3>내가 작성한 리뷰</h3>
     <div id="reviews">
