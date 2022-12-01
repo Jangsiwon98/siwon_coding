@@ -85,7 +85,7 @@
     <div class="wrapper">
 	    <div class="hjlist">
 	        <div class="listhead">
-		        <div class="userid"><b>아이디</b></div>
+		        <div class="userid"><b>이 름</b></div>
 		        <div class="hj1"><b>한줄평</b></div>
 		        <div class="hj2"><b>별점</b></div>
 		        <div class="hj3"><b>작성 날짜</b></div>
@@ -94,7 +94,7 @@
 	        <br><hr>
 	        <c:forEach items="${reviewlist }" var="dto">
 	        <div class="board">
-	            <div class="bd0">${dto.memberid }</div>
+	            <div class="bd0">${dto.membername }</div>
 	            <div class="bd1">${dto.reviewcontent }</div>
 	            <c:choose>
 	            	<c:when test="${dto.reviewstar ==1}" ><div class="bd2">⭐</div> </c:when>
