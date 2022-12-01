@@ -79,7 +79,7 @@
     <!--헤더-->
     <header id="main-header">
         <div class="header-title">
-          <p><a><img width="400" src="/image/logo.png"></a></p>
+          <p><a href="/mymovie/main"><img width="400" src="/image/logo.png"></a></p>
         </div>
         <nav class="header-menu">
             <ul>
