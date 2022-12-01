@@ -77,7 +77,19 @@
 </head>
 <body>
     <!--헤더-->
-    <%@ include file="./header.jsp"%>
+    <header id="main-header">
+        <div class="header-title">
+          <p><a><img width="400" src="/image/logo.png"></a></p>
+        </div>
+        <nav class="header-menu">
+            <ul>
+                <li><a href="/mymovie/notice/list">공지사항</a></li>
+            </ul>
+            <ul>
+                <li><a href="/member/logout">로그아웃</a></li>
+            </ul>
+        </nav>
+    </header>
     <!-- 마이페이지  -->
     <h2>마이페이지</h2>
     <h3>회원정보</h3>
