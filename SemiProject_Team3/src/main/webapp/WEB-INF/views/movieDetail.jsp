@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html>
   <head>
@@ -26,44 +26,6 @@
           })
     }
     </script>
-  
-     <!--기본 초기화-->
-     <style type="text/css">
-        *{
-            margin: 100; padding: 50;
-            background-color: #121319;
-            color: #f5f7ff;
-            font-family: sans-serif;
-        }
-        a{ text-decoration: none;  
-            color: lightgray;
-            cursor: pointer;
-        }
-        img{ border: 0; }
-        li{ display: inline-block; }
-    </style>
-     <!--헤더-->
-     <style type="text/css">
-        #main-header{
-            height: 100px;
-            position: relative;
-            margin-top: 100px;
-        }
-        .header-title{
-            position: absolute;
-            width: 400px; height: 100px;
-            left: 50%; 
-            margin-left: -150px;
-        }
-        .header-menu{
-            float: right; 
-            margin-top: 10px;
-            margin-right: 20px;
-        }
-        ul{
-            float: left; width: 120px; text-align: center; margin-right: 10px;
-        }
-    </style>
     <style type="text/css">
         .poster{
             width: 20%;
@@ -88,21 +50,8 @@
 <!-- moiveDetail -->
 
   <body>
-
-    <!--헤더-->
-    <header id="main-header">
-        <div class="header-title">
-            <a><img width="400" src="/image/logo.png"></a>
-        </div>
-        <nav class="header-menu">
-            <ul>
-                <li><a href="#">공지사항</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">마이페이지</a></li>
-            </ul>
-        </nav>
-    </header>
+<!--헤더-->
+    <%@ include file="./header.jsp"%>
 <br>
 <hr color="#6BCDA5" size="5px">
 <section id="main-section">
