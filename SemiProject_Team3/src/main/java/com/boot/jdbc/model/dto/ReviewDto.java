@@ -7,6 +7,7 @@ public class ReviewDto {
 	private String reviewcontent;
 	private String reviewstar;
 	private Date reviewdate;
+	private String membername;
 	private String memberid;
 	private int likecount;
 	
@@ -17,13 +18,14 @@ public class ReviewDto {
 	}
 
 
-	public ReviewDto(int reviewno, String reviewcontent, String reviewstar, Date reviewdate, String memberid,
-			int likecount) {
+	public ReviewDto(int reviewno, String reviewcontent, String reviewstar, Date reviewdate, String membername,
+			String memberid, int likecount) {
 		super();
 		this.reviewno = reviewno;
 		this.reviewcontent = reviewcontent;
 		this.reviewstar = reviewstar;
 		this.reviewdate = reviewdate;
+		this.membername = membername;
 		this.memberid = memberid;
 		this.likecount = likecount;
 	}
@@ -69,13 +71,13 @@ public class ReviewDto {
 	}
 
 
-	public String getMemberid() {
-		return memberid;
+	public String getMembername() {
+		return membername;
 	}
 
 
-	public void setMemberid(String memberid) {
-		this.memberid = memberid;
+	public void setMembername(String membername) {
+		this.membername = membername;
 	}
 
 
@@ -87,6 +89,19 @@ public class ReviewDto {
 	public void setLikecount(int likecount) {
 		this.likecount = likecount;
 	}
+
+
+	public String getMemberid() {
+		return memberid;
+	}
+
+
+	public void setMemberid(String memberid) {
+		this.memberid = memberid;
+	}
+
+
+
 	
 	
 }

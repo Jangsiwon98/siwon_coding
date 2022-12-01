@@ -49,8 +49,10 @@
             <input type="hidden" value="${reviewno }">
 	            <div class="reviewname">
 	                <div class="mover">
+	                    <div>이 름: </div>
+	                    <div><input type="text" name="membername" placeholder="이름을 입력해주세요."></div><br>
 	                    <div>아이디: </div>
-	                    <div><input type="text" name="memberid" placeholder="이메일을 입력해주세요."></div>
+	                    <div><input type="text" name="memberid" placeholder="아이디를 입력해주세요."></div>
 	            	</div>
 	            <br><br>
 	        	</div>
