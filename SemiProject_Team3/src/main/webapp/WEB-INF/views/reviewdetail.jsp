@@ -49,6 +49,8 @@
             <input type="hidden" value="${reviewno }">
 	            <div class="reviewname">
 	                <div class="mover">
+	               	    <div>영 화: </div>
+	                    <div><input type="text" name="movietitle" placeholder="영화를 입력해주세요."></div><br>
 	                    <div>이 름: </div>
 	                    <div><input type="text" name="membername" placeholder="이름을 입력해주세요."></div><br>
 	                    <div>아이디: </div>

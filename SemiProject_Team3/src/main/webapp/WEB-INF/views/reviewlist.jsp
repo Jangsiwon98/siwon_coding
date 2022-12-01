@@ -9,24 +9,26 @@
 <title>Insert title here</title>
 <style type="text/css">
     .wrapper{
-        width: 1100px;
+        width: 1300px;
         margin: 0 auto;
         text-align: center;
         box-sizing: border-box;
     }
     .listhead > div{ display: inline-block; }
-    .hjlist .userid{ width: 7%; }
-    .hjlist .hj1{ width: 52%; }
+    .hjlist .mn{width: 10%; text-align: left;}
+    .hjlist .userid{ width: 10%; text-align: right;}
+    .hjlist .hj1{ width: 40%; }
     .hjlist .hj2{ width: 15%; }
     .hjlist .hj3{ width: 11%; }
     .hjlist .hj4{ width: 11%; }
     .listhead{ color: #3cd1a3; }
     .board > div{ display: inline-block; }
     .board{ color: lightgray; }
-    .board .bd0{ width: 80px; }
-    .board .bd1{ width: 40.8%; }
-    .board .bd2{ width: 17%; }
-    .board .bd3{ width: 10%; }
+    .board .mn0{ width: 12%; text-align: left;}
+    .board .bd0{ width: 10%; }
+    .board .bd1{ width: 39%; }
+    .board .bd2{ width: 12%; }
+    .board .bd3{ width: 12%; }
     .board .bd4{ width: 10%; }
     .board .bd5{ width: 5%; margin-left: 1040px; margin-top: 20px; }
     .bd{ margin-left: 30px; }
@@ -34,11 +36,10 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin-left: 120px;
     }
     .bd3{ color: rgb(186, 186, 0); }
     #nolikebtn{ background-color: red; }
-	.writebt{ margin-left: 1100px; }
+	.writebt{ margin-left: 1250px; }
 </style>
 <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script>
@@ -85,6 +86,7 @@
     <div class="wrapper">
 	    <div class="hjlist">
 	        <div class="listhead">
+	        	<div class="mn"><b>영화</b></div>
 		        <div class="userid"><b>이 름</b></div>
 		        <div class="hj1"><b>한줄평</b></div>
 		        <div class="hj2"><b>별점</b></div>
@@ -94,6 +96,7 @@
 	        <br><hr>
 	        <c:forEach items="${reviewlist }" var="dto">
 	        <div class="board">
+	        	<div class="mn0">${dto.movietitle }</div>
 	            <div class="bd0">${dto.membername }</div>
 	            <div class="bd1">${dto.reviewcontent }</div>
 	            <c:choose>

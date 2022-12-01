@@ -15,7 +15,7 @@ public interface ReviewMapper {
 	@Select("SELECT * FROM REVIEWBOARD ORDER BY REVIEWNO DESC")
 	List<ReviewDto> selectRVList();
 	
-	@Insert( "INSERT INTO REVIEWBOARD VALUES(#{reviewno}, #{reviewcontent}, #{reviewstar}, NOW(), #{membername}, #{memberid}, DEFAULT)" )
+	@Insert( "INSERT INTO REVIEWBOARD VALUES(#{reviewno}, #{reviewcontent}, #{reviewstar}, NOW(), #{membername}, #{memberid},#{movietitle} , DEFAULT)" )
 	int insertRVList(ReviewDto dto);
 
 
