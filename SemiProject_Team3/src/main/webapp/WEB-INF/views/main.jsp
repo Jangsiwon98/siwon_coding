@@ -53,7 +53,7 @@
 </head>
 <body>
 <!--헤더-->
-    <%@ include file="./header.jsp"%>
+    <%@ include file="./header2.jsp"%>
     <!--영화 리스트 영역-->
     
     <!-- 영화 포스터 출력 및 링크(movieDetail로 이동) 수정 (고) 22.11.27.17:00-->
