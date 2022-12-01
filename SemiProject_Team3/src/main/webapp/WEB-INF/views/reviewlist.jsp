@@ -72,7 +72,13 @@
 	        <div class="board">
 	            <div class="bd0">${dto.memberid }</div>
 	            <div class="bd1">${dto.reviewcontent }</div>
-	            <div class="bd2">${dto.reviewstar }</div>
+	            <c:choose>
+	            	<c:when test="${dto.reviewstar ==1}" ><div class="bd2">⭐</div> </c:when>
+	            	<c:when test="${dto.reviewstar ==2}" ><div class="bd2">⭐⭐</div> </c:when>
+	            	<c:when test="${dto.reviewstar ==3}" ><div class="bd2">⭐⭐⭐</div> </c:when>
+	            	<c:when test="${dto.reviewstar ==4}" ><div class="bd2">⭐⭐⭐⭐</div> </c:when>
+	            	<c:otherwise ><div class="bd2">⭐⭐⭐⭐⭐</div> </c:otherwise>
+	            </c:choose>
 	            <div class="bd3"><fmt:formatDate pattern="yy-MM-dd" value="${dto.reviewdate }"/></div>
 	            <div class="bd4">${dto.likecount }</div>
 	            <input type="button" value="추 천" class="likebt">

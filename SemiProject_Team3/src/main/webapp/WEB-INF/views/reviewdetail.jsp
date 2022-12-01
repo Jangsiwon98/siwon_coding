@@ -47,27 +47,27 @@
         <div class="reviewWrite">
             <form action="/mymovie/insertform" method="post">
             <input type="hidden" value="${reviewno }">
-            <div class="reviewname">
-                <div class="mover">
-                    <div>아이디: </div>
-                    <div><input type="text" name="memberid" placeholder="이메일을 입력해주세요."></div>
-            	</div>
-            <br><br>
-        	</div>
-            <div>
-                <textarea rows="5" cols="70"  placeholder="리뷰를 작성해주세요." name="reviewcontent"></textarea>
-                <input id="smbt" type="submit" value="한 줄 리뷰 작성">
-            </div>
+	            <div class="reviewname">
+	                <div class="mover">
+	                    <div>아이디: </div>
+	                    <div><input type="text" name="memberid" placeholder="이메일을 입력해주세요."></div>
+	            	</div>
+	            <br><br>
+	        	</div>
+	            <div>
+	                <textarea rows="5" cols="70"  placeholder="리뷰를 작성해주세요." name="reviewcontent"></textarea>
+	                <input id="smbt" type="submit" value="한 줄 리뷰 작성">
+	            </div>
+	            <div id="myform">
+		           <fieldset>
+		               <input type="radio" name="reviewstar" value="5" id="rate1"><label for="rate1">⭐</label>
+		               <input type="radio" name="reviewstar" value="4" id="rate2"><label for="rate2">⭐</label>
+		               <input type="radio" name="reviewstar" value="3" id="rate3"><label for="rate3">⭐</label>
+		               <input type="radio" name="reviewstar" value="2" id="rate4"><label for="rate4">⭐</label>
+		               <input type="radio" name="reviewstar" value="1" id="rate5"><label for="rate5">⭐</label>
+		           </fieldset>
+       			</div>
        		</form>
-        </div>
-       <div id="myform">
-           <fieldset>
-               <input type="radio" name="rating" value="5" id="rate1"><label for="rate1">⭐</label>
-               <input type="radio" name="rating" value="4" id="rate2"><label for="rate2">⭐</label>
-               <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">⭐</label>
-               <input type="radio" name="rating" value="2" id="rate4"><label for="rate4">⭐</label>
-               <input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
-           </fieldset>
        </div>
        <br><br>  
 </body>
