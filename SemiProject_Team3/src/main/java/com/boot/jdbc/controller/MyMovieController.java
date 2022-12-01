@@ -1,5 +1,8 @@
 package com.boot.jdbc.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,11 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.boot.jdbc.model.biz.LikeBiz;
 import com.boot.jdbc.model.biz.MovieBiz;
 import com.boot.jdbc.model.biz.NoticeBiz;
 import com.boot.jdbc.model.biz.ReviewBiz;
-import com.boot.jdbc.model.dto.ReviewDto;
+import com.boot.jdbc.model.dto.LikeDto;
+import com.boot.jdbc.model.dto.MemberDto;
 import com.boot.jdbc.model.dto.NoticeDto;
+import com.boot.jdbc.model.dto.ReviewDto;
 
 @Controller
 @RequestMapping("/mymovie")
@@ -22,6 +28,8 @@ public class MyMovieController {
 	private ReviewBiz reviewBiz;
 	@Autowired
 	private MovieBiz movieBiz;
+	@Autowired
+	private LikeBiz likeBiz;
 	
 	@GetMapping("/main")
 	public String main(Model model) {
@@ -81,7 +89,11 @@ public class MyMovieController {
 	}
 
 	@GetMapping("/reviewlist")
-	public String selectRVList(Model model) {
+	public String selectRVList(HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		MemberDto member = (MemberDto) session.getAttribute("login");
+		model.addAttribute("memberid", member.getMemberid());
+		
 		model.addAttribute("reviewlist", reviewBiz.selectRVList());
 		return "reviewlist";
 	}
@@ -97,6 +109,27 @@ public class MyMovieController {
 			return "redirect:/mymovie/insertform";
 		}
 	}
+	
+	@PostMapping("/likeinsert")
+	public String insertlike(LikeDto dto ) {
+		if(likeBiz.insert(dto)>0) {
+			return "redirect:/mymovie/reviewlist";
+		}else {
+			System.out.println("추천 실패");
+			return "redirect:/mymovie/reviewlist";
+		}
+	}
+	
+	@GetMapping("/likedelete")
+	public String deletelike(LikeDto dto) {
+		if(likeBiz.delete(dto)>0) {
+			return "redirect:/mymovie/reviewlist";
+		}else {
+			System.out.println("추천 취소 실패");
+			return "redirect:/mymovie/reviewlist";
+		}
+	}
+	
 	//===영화상세페이지 관련(채)===
 	
 	@GetMapping("/movieDetail")

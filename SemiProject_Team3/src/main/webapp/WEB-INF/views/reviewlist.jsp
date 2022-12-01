@@ -28,7 +28,7 @@
     .board .bd2{ width: 17%; }
     .board .bd3{ width: 10%; }
     .board .bd4{ width: 10%; }
-    .board .likebt { width: 5%; }
+    .board .bd5{ width: 5%; margin-left: 1040px; margin-top: 20px; }
     .bd{ margin-left: 30px; }
     .bd2{
         white-space: nowrap;
@@ -37,14 +37,38 @@
         margin-left: 120px;
     }
     .bd3{ color: rgb(186, 186, 0); }
-    .likebt{
-	    margin-left: 1040px;
-	    margin-top: 20px;
-	}
+    #nolikebtn{ background-color: red; }
 	.writebt{ margin-left: 1100px; }
 </style>
 <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script>
+	$(document).ready(function(){
+		$("#likebtn").click(function(){
+			let reviewno = $(this).attr('idx');
+			let memberid = '${memberid}';
+			
+			$.ajax({
+	            url :'/mymovie/likeinsert',
+	            type :'POST',
+	            data : { 'memberid' : memberid, 'reviewno' : reviewno }
+	        });
+			alert("추천 성공");
+	    	window.location.reload();
+		});
+		
+		$("#nolikebtn").click(function(){
+			let reviewno = $(this).attr('idx');
+			let memberid = '${memberid}';
+			
+			$.ajax({
+	            url :'/mymovie/likedelete',
+	            type :'GET',
+	            data : { 'memberid' : memberid, 'reviewno' : reviewno }
+	        });
+			alert("취소 성공");
+	    	window.location.reload();
+		});
+	});
 </script>
 </head>
 <body>
@@ -81,7 +105,16 @@
 	            </c:choose>
 	            <div class="bd3"><fmt:formatDate pattern="yy-MM-dd" value="${dto.reviewdate }"/></div>
 	            <div class="bd4">${dto.likecount }</div>
-	            <input type="button" value="추 천" class="likebt">
+	            <div class="bd5">
+	            <c:choose>
+	            	<c:when test="${dto.likecount ==0}">
+	            		<input type="button" value="추 천" id="likebtn" idx="${dto.reviewno }">
+	            	</c:when>
+	            	<c:otherwise>
+	            		<input type="button" value="추 천" id="nolikebtn" idx="${dto.reviewno }">
+	            	</c:otherwise>
+	            </c:choose>
+	            </div>
 	            <hr>
 	        </div>
 	        </c:forEach>

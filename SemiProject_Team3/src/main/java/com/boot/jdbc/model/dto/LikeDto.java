@@ -3,37 +3,42 @@ package com.boot.jdbc.model.dto;
 public class LikeDto {
 
 	private int likeno;
-	private String likeid;
-	private int likecount;
+	private String memberid;
+	private int reviewno;
 	
 	public LikeDto() {
 		super();
 	}
-	public LikeDto(int likeno, String likeid, int likecount) {
+
+	public LikeDto(int likeno, String memberid, int reviewno) {
 		super();
 		this.likeno = likeno;
-		this.likeid = likeid;
-		this.likecount = likecount;
+		this.memberid = memberid;
+		this.reviewno = reviewno;
 	}
+
 	public int getLikeno() {
 		return likeno;
 	}
+
 	public void setLikeno(int likeno) {
 		this.likeno = likeno;
 	}
-	public String getLikeid() {
-		return likeid;
+
+	public String getMemberid() {
+		return memberid;
 	}
-	public void setLikeid(String likeid) {
-		this.likeid = likeid;
+
+	public void setMemberid(String memberid) {
+		this.memberid = memberid;
 	}
-	public int getLikecount() {
-		return likecount;
+
+	public int getReviewno() {
+		return reviewno;
 	}
-	public void setLikecount(int likecount) {
-		this.likecount = likecount;
+
+	public void setReviewno(int reviewno) {
+		this.reviewno = reviewno;
 	}
-	
-	
 	
 }
