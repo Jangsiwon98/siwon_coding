@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.boot.jdbc.model.dao.MovieMapper;
 import com.boot.jdbc.model.dto.MovieDto;
+import com.boot.jdbc.model.dto.MovierequestDto;
 
 
 
@@ -24,6 +25,16 @@ public class MovieImpl implements MovieBiz{
 	@Override
 	public List<MovieDto> selectMovieList() {
 		return movieMapper.selectMovieList();
+	}
+	
+	@Override
+	public List<MovieDto> searchMovie(String keyword) {
+		return movieMapper.searchMovie(keyword);
+	}
+	
+	@Override
+	public int insertrequest(MovierequestDto dto) {
+		return movieMapper.insertRequest(dto);
 	}
 
 }

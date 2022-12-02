@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.boot.jdbc.model.biz.LikeBiz;
 import com.boot.jdbc.model.biz.MovieBiz;
@@ -16,6 +17,7 @@ import com.boot.jdbc.model.biz.NoticeBiz;
 import com.boot.jdbc.model.biz.ReviewBiz;
 import com.boot.jdbc.model.dto.LikeDto;
 import com.boot.jdbc.model.dto.MemberDto;
+import com.boot.jdbc.model.dto.MovierequestDto;
 import com.boot.jdbc.model.dto.NoticeDto;
 import com.boot.jdbc.model.dto.ReviewDto;
 
@@ -35,6 +37,23 @@ public class MyMovieController {
 	public String main(Model model) {
 		model.addAttribute("movielist", movieBiz.selectMovieList());
 		return "main";
+	}
+	
+	@GetMapping("/search")
+	public String search(@RequestParam(value="keyword") String keyword, Model model) {
+		model.addAttribute("movielist", movieBiz.searchMovie(keyword));
+		return "main";
+	}
+	
+	@PostMapping("/search/request")
+	public String searchrequest(MovierequestDto dto, Model model) {
+		if(movieBiz.insertrequest(dto)>0) {
+			model.addAttribute("msg", "요청 완료");
+			return "redirect:/mymovie/main";
+		}else {
+			model.addAttribute("msg", "요청 실패");
+			return "redirect:/mymovie/main";
+		}
 	}
 
 	@GetMapping("/notice/list")
